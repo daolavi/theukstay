@@ -1,6 +1,6 @@
 {
   "name": "TheUkStay",
-  "description": "Countdown to the date leaving The UK",
+  "description": "The UK Stay Countdown made with VueJs",
   "author": "Dao Lam <daolavi@gmail.com>",
   "private": true,
   "scripts": {
