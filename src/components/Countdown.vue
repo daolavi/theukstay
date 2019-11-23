@@ -1,18 +1,18 @@
 <template>
     <div class="block">
-        <p class="digit">{{ days | two_digits }}</p>
+        <p class="digit">{{ days }}</p>
         <p class="text">Days</p>
     </div>
     <div class="block">
-        <p class="digit">{{ hours | two_digits }}</p>
+        <p class="digit">{{ hours }}</p>
         <p class="text">Hours</p>
     </div>
     <div class="block">
-        <p class="digit">{{ minutes | two_digits }}</p>
+        <p class="digit">{{ minutes }}</p>
         <p class="text">Minutes</p>
     </div>
     <div class="block">
-        <p class="digit">{{ seconds | two_digits }}</p>
+        <p class="digit">{{ seconds }}</p>
         <p class="text">Seconds</p>
     </div>
 </template>
@@ -40,19 +40,26 @@ export default {
 
     computed: {
         seconds() {
-            return (this.date - this.now) % 60;
+            let seconds = (this.date - this.now) % 60
+            let seconds_two_digits = seconds.toString().padStart(2,'0')
+            return seconds_two_digits
         },
 
         minutes() {
-            return Math.trunc((this.date - this.now) / 60) % 60;
+            let minutes = Math.trunc((this.date - this.now) / 60) % 60
+            let minutes_two_digits = minutes.toString().padStart(2,'0')
+            return minutes_two_digits
         },
 
         hours() {
-            return Math.trunc((this.date - this.now) / 60 / 60) % 24;
+            let hours = Math.trunc((this.date - this.now) / 60 / 60) % 24
+            let hours_two_digits = hours.toString().padStart(2,'0')
+            return hours_two_digits
         },
 
         days() {
-            return Math.trunc((this.date - this.now) / 60 / 60 / 24);
+            let days = Math.trunc((this.date - this.now) / 60 / 60 / 24)
+            return days
         }
     }
 }
