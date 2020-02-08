@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Countdown eventdate="February 04, 2020" startdate="October 28, 2019"></Countdown>
+    <Countdown eventdate="March 31, 2020" startdate="October 28, 2019"></Countdown>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   position: absolute;
   right: 0;
   top: 0;
-  background-color: #292b33;
+  background-color: #000000;
   background-image: url("background.png");
   background-size: cover;
   background-repeat: no-repeat;
